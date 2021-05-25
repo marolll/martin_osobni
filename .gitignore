@@ -1,0 +1,4 @@
+app/config/local.neon
+nbproject
+temp
+log

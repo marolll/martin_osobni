@@ -1,0 +1,218 @@
+{layout '../../../@layout.latte'}
+{block title}
+    {_ homepage.title}
+{/block}
+{block description}
+
+{/block}
+{block content}
+
+<!--Zahrnout to potom v css-->
+<!--<section id="header-section" 
+         style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
+         url({$basePath}/images/martin_hory.jpg);background-attachment: fixed;
+         background-repeat: no-repeat;
+         background-size: cover;
+         background-position: bottom;"
+>
+    <div id="header-container">
+      <h1>Martin Bureš</h1>
+      <p id="header-para">
+        <span id="header-span-front-end" class="shown-element">
+          Front-end developer
+        </span>
+        <span id="header-span-music" class="hidden-element">
+          Musician
+        </span>
+        <span id="header-span-nature" class="hidden-element">
+          Nature Lover
+        </span>
+      </p>
+    </div>
+</section>
+<div id="main-content-container">
+    <section id="about">
+      <h2 class="section-header">About Me</h2>
+
+      <hr />
+      <p class="section-para">
+        „Hello my name is Martin and I am 26 years old. I am a minimalist,
+        musician, nature lover and Junior Front-End developer. I studied
+        Geography and I know some GIS programs like Q-gis or ArcGis,
+        nevertheless I find more potencial in programming and I really love
+        creating maps with JavaScript. I really want to connect geography
+        with my programming skills“
+      </p>
+      <div id="about-wrapper">
+          <div id="about-image" style="background: url({$basePath}/images/photo_smile.jpg);
+      background-size: cover;
+      border-radius: 1rem;
+      box-shadow: 3px 3px 12px black;
+      background-position: center;"></div>
+        <ul id="about-info">
+          <li>
+            <h4 class="section-h4">
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i> Last
+              Graduation
+            </h4>
+            <p>
+              Masaryk University - Geography and Geoinformatics (Master
+              degree)
+            </p>
+          </li>
+          <li>
+            <h4 class="section-h4">
+              <i class="fa fa-briefcase" aria-hidden="true"></i> Work
+              History
+            </h4>
+            <p>GIS Administrator at Brno Municipality (2019 - 2021)</p>
+            <p>
+              Front-End Developer at Transport Research Centre in Brno
+              (since 2021)
+            </p>
+          </li>
+
+          <li>
+            <h4 class="section-h4">
+              <i class="fa fa-laptop" aria-hidden="true"></i>
+              Front-End skills
+            </h4>
+            <p>
+              JavaScript, CSS, HTML, React, Leaflet, jQuery, Bootstrap,
+              Material-Ui, Gimp, InksCape...
+            </p>
+          </li>
+          <li>
+            <h4 class="section-h4">
+              <i class="fa fa-hand-rock-o" aria-hidden="true"></i> Other
+              hard skills
+            </h4>
+            <p>
+              Car licence (B), English (B2), SketchUp, Q-gis, MS Office...
+            </p>
+          </li>
+          <li>
+            <h4 class="section-h4">
+              <i class="fa fa-snowflake-o" aria-hidden="true"></i> Soft
+              Skills
+            </h4>
+
+            <p>
+              Flexibility, Creativity, Passion, Communication skills,
+              Teachability, independence
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-header">Projects</h2>
+      <hr />
+      <div class="projects-row">
+        <div
+          class="project"
+          style="
+          background: url({$basePath}/images/charger.jpg);
+            background-size: cover;
+          "
+        >
+          <h4 class="section-h4">OpenCharge Map</h4>
+        </div>
+        <div
+          class="project"
+          style="
+            background: url({$basePath}/images/ortophoto.jpg);
+            background-size: cover;
+          "
+        >
+          <h4 class="section-h4">Ortophoto Map</h4>
+        </div>
+      </div>
+      <div class="projects-row">
+        <div
+          class="project"
+          style="
+            background: url({$basePath}/images/3D.jpg);
+            background-size: cover;
+          "
+        >
+          <h4 class="section-h4">React/Nette/Router Project</h4>
+        </div>
+        <div
+          class="project"
+          style="
+            background: url({$basePath}/images/last-proj.jpg);
+            background-size: cover;
+          "
+        >
+          <h4 class="section-h4">Catalog</h4>
+        </div>
+      </div>
+    </section>
+    <section id="hobbies">
+      <h2 class="section-header">My Hobby</h2>
+      <hr />
+      <p class="section-para">
+        My biggest love is music and I can't imagine to live without it. I
+        have been playing guitar for 6 years and singing for 3 years. I also
+        know some piano basics. I prefer acoustic music and I am really into
+        street performances/busking. Check out my covers on my
+        <a href="https://www.instagram.com/marty_burak/" target="_blank"
+          >Instagram</a
+        >.
+      </p>
+      <div class="video-wrapper">
+        <iframe
+          class="youtube-video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/T6Rmj2_AiB4"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+</div> -->
+<!--<div class="form-container">
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Example select</label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Example multiple select</label>
+      <select multiple class="form-control" id="exampleFormControlSelect2">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Example textarea</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+  </form>  
+</div>-->
+
+{foreach $feedbacks ad $feedback}
+    <div>{$feedback->feed_id}</div>
+    <div>{$feedback->feed_tel}</div>
+    <div>{$feedback->feed_email}</div>
+{/foreach}
+
+{/block}

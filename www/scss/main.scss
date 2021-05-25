@@ -1,0 +1,613 @@
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600&display=swap");
+
+// Variables
+
+// !!!!!TRY Inca Gold (#BD7F37FF) and Scarlet Sage (#A13941FF)!!!!!
+$primaryColor: #f2aa4c; // rgb(161,57,65)
+$secondaryColor: #101820; // rgb(189,127,55)
+$whiteColor: #ffffff;
+$grayColor: #ebecf0;
+$whiteTransparentColor: rgba(255, 255, 255, 0.8);
+$blackColor: #000000;
+$blackTransparentColor: rgba(0, 0, 0, 0.6);
+
+// SIZES AND FONTS
+
+$fontSizeH2ExtraSmall: 2rem;
+$fontSizeH2Small: 2.2rem;
+$fontSizeH2Medium: 2.4rem;
+$fontSizeH2Large: 2.6rem;
+$fontSizeH2ExtraLarge: 3rem;
+
+$fontSizeH4ExtraSmall: 1.3rem;
+$fontSizeH4Small: 1.4rem;
+$fontSizeH4Medium: 1.5rem;
+$fontSizeH4Large: 1.6rem;
+$fontSizeH4ExtraLarge: 1.7rem;
+
+// margins and paddings
+$marginSections: 3rem;
+$marginSectionDivide: 4rem;
+
+// SHADOWS
+$blackBoxShadow: 3px 3px 12px $blackColor;
+$grayBoxShadow: 3px 3px 12px $grayColor;
+
+// *********************** GENERAL ******************************* //
+body,
+html {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.section-header {
+  font-size: $fontSizeH2ExtraSmall;
+  text-align: center;
+  margin: $marginSectionDivide 0 0 0;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  border-radius: 5%;
+  font-weight: 700;
+  span {
+    border-bottom: 4px solid $primaryColor;
+  }
+  @media screen and (min-width: 576px) {
+    font-size: $fontSizeH2Small;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: $fontSizeH2Medium;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: $fontSizeH2Large;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: $fontSizeH2ExtraLarge;
+  }
+}
+
+.section-h4 {
+  text-align: center;
+  letter-spacing: 2px;
+
+  font-size: $fontSizeH4ExtraSmall;
+  font-weight: 700;
+  text-transform: uppercase;
+  @media screen and (min-width: 576px) {
+    font-size: $fontSizeH4Small;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: $fontSizeH4Medium;
+  }
+  @media screen and (min-width: 992px) {
+    font-size: $fontSizeH4Large;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: $fontSizeH4ExtraLarge;
+  }
+}
+.section-para {
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: $marginSections;
+  @media screen and (min-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  width: 40%;
+  background-color: $whiteColor;
+  height: 7px;
+  border-radius: 50%;
+  box-shadow: $blackBoxShadow;
+  @media screen and (max-width: 767px) {
+    width: 70%;
+  }
+}
+
+// ************** CLASSES FOR ADD AND REMOVE WITH JS ******************* //
+
+// ******************** HEADER ************************************ //
+#sidebar-toggler {
+  @media screen and (max-width: 768px) {
+    color: $whiteColor;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2001;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: $secondaryColor;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 3px $blackColor;
+  }
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+}
+
+#navbar {
+  z-index: 1000;
+  position: fixed;
+  background-color: $secondaryColor;
+  top: 0;
+  a {
+    text-decoration: none;
+    color: $whiteColor;
+    font-weight: 700;
+    &:link,
+    :visited {
+      color: $whiteColor;
+    }
+  }
+
+  // FOR MOBILES WILL BE SIDEBAR
+  @media screen and (max-width: 768px) {
+    width: 250px;
+    height: 100vh;
+    border-radius: 10% 0 0 20% / 50% 0 0 50%;
+    transition: 250ms ease-in;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    #nav-link-wrapper {
+      width: 100%;
+      height: 100%;
+      a {
+        position: relative;
+        width: 60%;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 2.5rem;
+        margin-top: 3rem;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        i {
+          width: 5rem;
+        }
+
+        &:nth-child(1) {
+          margin-top: 15vh;
+        }
+        span {
+          position: absolute;
+          top: -4px;
+          left: 3rem;
+        }
+      }
+      select {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        margin-left: 2.5rem;
+      }
+    }
+  }
+  // FOR bigger tablets and small laptops
+  @media (min-width: 769px) {
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 50% 50% / 0 0 0.8rem 0.8rem;
+    #nav-link-wrapper {
+      width: 90vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 0.7rem;
+      a {
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        padding: 0 0 1.5rem 0;
+        transition: 250ms ease-in;
+        @media (hover: hover) {
+          // only for devices with hover - oposite is none
+          &:hover {
+            color: $primaryColor;
+            transform: translateY(0.5rem);
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 993px) {
+    #nav-link-wrapper {
+      width: 80%;
+      justify-content: space-around;
+      a {
+        font-size: 1.4rem;
+        letter-spacing: 3px;
+        padding: 1rem 0 2rem 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1201px) {
+    #nav-link-wrapper {
+      width: 70%;
+    }
+  }
+}
+
+#header-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  #header-container {
+    position: relative;
+    text-align: center;
+    background-color: $blackTransparentColor;
+    margin: 0 auto;
+    padding: 2rem 0.5rem;
+    border-radius: 3rem;
+    box-shadow: $blackBoxShadow;
+    color: $whiteColor;
+
+    h1 {
+      padding-top: 0;
+      margin-top: 0;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      text-shadow: $blackBoxShadow;
+      letter-spacing: 2px;
+    }
+    #header-para {
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      text-shadow: $blackBoxShadow;
+      letter-spacing: 2px;
+    }
+
+    // small from 351px
+    @media screen and (min-width: 351px) {
+      padding: 2.5rem 1rem;
+      h1 {
+        font-size: 2.1rem;
+      }
+      #header-para {
+        font-size: 1rem;
+      }
+    }
+
+    // small
+
+    @media screen and (min-width: 577px) {
+      padding: 2.5rem 2.5rem;
+      h1 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+      }
+      #header-para {
+        font-size: 1.1rem;
+      }
+    }
+
+    // medium
+
+    @media screen and (min-width: 769px) {
+      padding: 3rem 3rem;
+      h1 {
+        font-size: 2.3rem;
+        letter-spacing: 3px;
+      }
+      #header-para {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+      }
+    }
+
+    // large
+    @media screen and (min-width: 993px) {
+      h1 {
+        font-size: 2.6rem;
+        letter-spacing: 4px;
+      }
+      #header-para {
+        font-size: 1.3rem;
+        letter-spacing: 4px;
+      }
+    }
+
+    // extra large
+
+    @media screen and (min-width: 1201px) {
+      h1 {
+        font-size: 3rem;
+      }
+      #header-para {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+// ******************** MAIN SECTION ************************************ //
+
+#main-content-container {
+  width: 90%;
+  margin: 0 auto;
+  @media screen and (min-width: 351px) {
+    width: 95%;
+  }
+  @media screen and (min-width: 577px) {
+    width: 90%;
+  }
+  @media screen and (min-width: 993px) {
+    width: 80%;
+  }
+  @media screen and (min-width: 1201px) {
+    width: 70%;
+  }
+}
+
+// ********************* ABOUT ******************
+
+#about {
+  #about-wrapper {
+    background-color: $whiteColor;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: $blackBoxShadow;
+    background-image: linear-gradient(
+      to left bottom,
+      #ffffff,
+      #dfdfdf,
+      #bfbfbf,
+      #a1a1a1,
+      #838383
+    );
+
+    #about-image {
+      width: 60%;
+      margin: 0 auto;
+      height: 40vh;
+      margin-bottom: $marginSections;
+      filter: grayscale(80%);
+      transition: 70ms ease-in;
+      @media (hover: hover) {
+        // only for devices with hover - oposite is none
+        &:hover {
+          filter: grayscale(20%);
+        }
+      }
+      @media (hover: none) {
+        filter: grayscale(20%);
+      }
+    }
+    #about-info {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        margin: 2.5rem 0;
+        p {
+          text-align: center;
+          font-size: 1.1rem;
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 576px) {
+      #about-image {
+        width: 40%;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      #about-image {
+        margin: 0 auto;
+        width: 35%;
+        position: relative;
+        top: 10vh;
+      }
+      #about-info {
+        width: 65%;
+        margin: 0 1rem 0 2rem;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      #about-image {
+        width: 30%;
+      }
+      #about-info {
+        width: 70%;
+      }
+    }
+    @media screen and (min-width: 1500px) {
+      #about-image {
+        width: 25%;
+      }
+      #about-info {
+        width: 75%;
+      }
+    }
+  }
+}
+
+// **************** PROJECTS *************************
+
+#projects {
+  .projects-row {
+    display: flex;
+    flex-basis: 12;
+    flex-wrap: wrap;
+    .project {
+      width: 50%;
+      height: 30vh;
+      border: 5px solid $secondaryColor;
+      border-radius: 1rem;
+      margin: 0.5rem;
+      width: 100%;
+      box-shadow: $grayBoxShadow;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      filter: grayscale(80%);
+      transition: 250ms ease-in;
+      cursor: pointer;
+      @media (hover: none) {
+        filter: grayscale(10%);
+      }
+      &:hover,
+      :focus {
+        filter: grayscale(10%);
+      }
+      .section-h4 {
+        background-color: $blackTransparentColor;
+        color: white;
+        padding: 1rem 0.5rem;
+        border-radius: 1rem;
+        max-width: 80%;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+#hobbies {
+  margin-bottom: 15vh;
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 30vh;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    .youtube-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+#footer {
+  .wrap-footer {
+    background-color: $whiteColor;
+    h2 {
+      // padding: 2rem 0 3rem 0;
+      // color: $whiteColor;
+      position: relative;
+      z-index: 21;
+    }
+
+    .contact-ul {
+      margin-bottom: 0;
+      padding-left: 0;
+      padding-bottom: 0.5rem;
+      position: relative;
+      z-index: 20;
+
+      .contact-li {
+        list-style: none;
+        text-align: center;
+        margin-bottom: 2.5rem;
+        &:last-child {
+          margin-bottom: 1rem;
+        }
+        a {
+          text-decoration: none;
+          color: $blackColor;
+          font-weight: 700;
+          font-size: 1.2rem;
+          @media screen and (max-width: 350px) {
+            font-size: 1rem;
+          }
+          @media screen and (min-width: 351px) {
+            font-size: 1.2rem;
+          }
+          @media screen and (min-width: 576px) {
+            font-size: 1.4rem;
+          }
+          @media screen and (min-width: 768px) {
+            font-size: 1.5rem;
+          }
+          &:active,
+          :visited {
+            color: $blackColor;
+          }
+        }
+        &.socials {
+          a {
+            &:last-child {
+              margin-right: 0;
+            }
+            font-size: 2.5rem;
+            margin-right: 0.5rem;
+            @media screen and (min-width: 576px) {
+              font-size: 3rem;
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .waves-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      svg {
+        @media screen and (max-width: 768px) {
+          height: 300px;
+          max-height: 100%;
+        }
+      }
+    }
+  }
+}
+
+// ************************* HOBBIES SECTION ************************************* //
+
+.hidden-sidebar {
+  right: -250px;
+}
+
+.shown-sidebar {
+  right: 0;
+}
+
+.hidden-element {
+  display: none;
+}
+/* 
+Bootstrap Breakpoints
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+*/

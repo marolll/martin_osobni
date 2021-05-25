@@ -1,0 +1,45 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+
+
+application:
+	catchExceptions: false
+	errorPresenter: Error:Error
+	mapping:
+		Error: ['App\Presenters', '*', '*Presenter']
+		*: ['App\Modules',  '*', '*Presenter']
+
+session:
+	expiration: 14 days
+
+database:
+	dsn: 'mysql:host=127.0.0.1;dbname=martin_osobni'
+	user: 
+	password:
+	options:
+		lazy: yes
+
+
+
+services:
+	- App\Model\UserManager
+	- App\Model\PreviewFactory
+	- App\Forms\FormFactory
+	- App\Forms\SignInFormFactory
+	- App\Forms\SignUpFormFactory
+	router: App\Router\RouterFactory::createRouter
+
+extensions:
+    translation: Contributte\Translation\DI\TranslationExtension
+
+translation:
+    locales:
+        whitelist: [en, cs]
+        default: cs
+        fallback: [en]
+    dirs:
+        - %appDir%/lang/cs
+        - %appDir%/lang/en

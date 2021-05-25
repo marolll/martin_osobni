@@ -1,0 +1,28 @@
+{var $num = $count->count / 4 / $limit}
+<nav aria-label="Stránkování">
+    <ul class="pagination justify-content-center m-0">
+        <li class="page-item {if is_null($page) || $page == 1}disabled{/if}">
+            <a class="page-link" n:href="$presenter 1"><i class="fas fa-angle-double-left"></i></a>
+        </li>
+        <li class="page-item {if is_null($page) || $page == 1}disabled{/if}">
+            <a class="page-link" n:href="$presenter $page - 1"><i class="fas fa-angle-left"></i></a>
+        </li>
+        {if $count->count/$limit >= 5}
+            <li class="page-item d-none d-sm-table"><a class="page-link" n:href="$presenter 1">1</a></li>
+            <li class="page-item d-none d-sm-table"><a class="page-link" n:href="$presenter ceil($num)">{ceil($num)}</a></li>
+            <li class="page-item d-none d-sm-table"><a class="page-link" n:href="$presenter ceil($num * 2)">{ceil($num * 2)}</a></li>
+            <li class="page-item d-none d-sm-table"><a class="page-link" n:href="$presenter ceil($num * 3)">{ceil($num * 3)}</a></li>
+            <li class="page-item d-none d-sm-table"><a class="page-link" n:href="$presenter ceil($count->count/$limit)">{ceil($count->count/$limit)}</a></li>
+        {else}
+            {for $i = 0; $i < $count->count/$limit; $i++}
+              <li class="page-item d-none d-sm-table"><a class="page-link" n:href="$presenter $i+1">{$i+1}</a></li>
+            {/for}
+        {/if}
+        <li class="page-item {if $page == ceil($count->count/$limit) || ceil($count->count/$limit) == 0}disabled{/if}">
+            <a class="page-link" n:href="$presenter $page + 1"><i class="fas fa-angle-right"></i></a>
+        </li>
+        <li class="page-item {if $page == ceil($count->count/$limit) || ceil($count->count/$limit) == 0}disabled{/if}">
+            <a class="page-link" n:href="$presenter ceil($count->count/$limit)"><i class="fas fa-angle-double-right"></i></a>
+        </li>
+    </ul>
+</nav>
