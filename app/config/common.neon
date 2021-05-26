@@ -16,7 +16,7 @@ session:
 	expiration: 14 days
 
 database:
-	dsn: 'mysql:host=127.0.0.1;dbname=martin_osobni'
+	dsn: 'mysql:host=127.0.0.1;dbname=test'
 	user: 
 	password:
 	options:
@@ -27,9 +27,9 @@ database:
 services:
 	- App\Model\UserManager
 	- App\Model\PreviewFactory
+	- App\Model\Feedbacks
 	- App\Forms\FormFactory
-	- App\Forms\SignInFormFactory
-	- App\Forms\SignUpFormFactory
+	- App\Forms\NewFeedbackFormFactory
 	router: App\Router\RouterFactory::createRouter
 
 extensions:

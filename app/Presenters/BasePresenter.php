@@ -20,11 +20,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
     /** @var Contributte\Translation\LocalesResolvers\Session @inject */
     public $translatorSessionResolver;
-    
-     /** @var Nette\Database\Explorer @inject */
-    private $database;
-    
-
 
     public function handleChangeLocale(string $locale): void
     {
@@ -36,20 +31,4 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
         parent::startup();
         $this->template->locale = $this->locale;
     }
-    
-   
-     
-     
-     public function __construct(Nette\Database\Explorer $database) {
-         $this->database = $database;
-     }
-     
-     public function renderDefault(): void {
-         $this->template->feedbacks = $this->database->table('posts')
-                 ->order('feed_id DESC')
-                 ->limit(5);
-     }
-     
-     
-     
 }

@@ -15,7 +15,9 @@ final class RouterFactory
 	public static function createRouter(): RouteList
 	{
 		$router = new RouteList;
-		$router->addRoute('[<locale=cs cs|en>/]', 'Frontend:Homepage:default');
-		return $router;
+		$router->addRoute('[<locale=cs cs|en>/]novy-feedback', 'Form:Feedback:newFeedback');
+                $router->addRoute('[<locale=cs cs|en>/]feedback-odeslan', 'Form:Feedback:feedbackSent');
+                $router->addRoute('[<locale=cs cs|en>/]', 'Frontend:Homepage:default');
+                return $router;
 	}
 }

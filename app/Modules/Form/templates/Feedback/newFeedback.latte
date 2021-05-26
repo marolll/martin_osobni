@@ -1,0 +1,34 @@
+{layout '../../../@layout.latte'}
+{block title}
+    {_ homepage.title}
+{/block}
+{block description}
+
+{/block}
+{block content}
+<div class="placeContainer" style="height: 200px;"></div>
+<div class="container">
+    <form n:name="newFeedbackForm">
+        <div class="card">
+            <div class="card-header">
+                <h2>Pošlete Feedback</h2>
+            </div>
+            <div class="card-body">
+                
+                <div class="card-text">
+                    <label for="feed_email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="feed_email" aria-describedby="E-mail" n:name="feed_email">
+                </div>
+                <div class="card-text">
+                    <label for="feed_text" class="form-label">Text</label>
+                    <textarea class="form-control" id="feed_text" rows="3" n:name="feed_text"></textarea>
+                </div>
+                <button class="btn btn-success" n:name="send">Poslat</button>
+            </div>
+        </div>
+    </form>
+    
+</div>
+<div class="placeContainer" style="height: 200px;"></div>
+
+{/block}
